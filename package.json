@@ -1,0 +1,34 @@
+{
+  "name": "handelbarsemail",
+  "version": "2.0.0",
+  "description": "HTML Emails printed from Handlebars templates and inlined CSS",
+  "main": "gulpfile.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "html",
+    "emails"
+  ],
+  "author": "howeller <eric@howellstudio.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "del": "*",
+    "fs": "*",
+    "gulp": "*",
+    "gulp-compile-handlebars": "*",
+    "gulp-email-builder-min": "^0.0.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-rename": "*",
+    "gulp-zip": "*",
+    "imagemin-pngquant": "^9.0.2",
+    "merge-stream": "*",
+    "path": "*",
+    "string-remove-widows": "^1.6.8",
+    "string-strip-html": "^4.5.0",
+    "vinyl-buffer": "^1.0.1"
+  }
+}

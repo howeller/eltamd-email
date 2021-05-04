@@ -1,0 +1,25 @@
+<!-- Tile Module Start :: {{tile.module}} -->
+<table class="mod-tile-txt-wrapper" width="{{root.global.tileTextWrapperWidth}}" align="center" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td align="center" class="red tile-h1">
+			{{{formatLine tile.h1}}}
+		</td>
+	</tr>
+	<tr>
+		<td class="gap-20">&nbsp;</td>
+	</tr>
+	<tr>
+		<td align="center" class="body-txt gray {{#if tile.body_text.class}}{{tile.body_text.class}}{{/if}}">
+			{{{formatLine tile.body_text.text}}}{{!--#formatParagraph tile.body_text.text}} {{{.}}} {{/formatParagraph--}}
+		</td>
+	</tr>{{#if tile.cta}}
+	<tr>
+		<td class="gap-20">&nbsp;</td>
+	</tr>
+	<tr>
+		<td align="{{#if tile.cta.align}}{{tile.cta.align}}{{else}}center{{/if}}">
+			{{> module_cta.html cta=tile.cta}}
+		</td>
+	</tr>{{/if}}
+</table><!--[if gte mso 16]><span style="font-size:0px;line-height:0px;"><br>&nbsp;</span><![endif]-->{{! OUTLOOK HACK TO REMOVE RANDOM HORZ LINES DRAWN UNDER TABLE WITH BG COLOR}}
+<!-- Tile Module End :: {{tile.module}} -->

@@ -1,0 +1,68 @@
+<tr><!-- Module Start :: Statistics -->
+	<td class="two-column" valign="top" bgcolor="{{this.bgColor}}">
+		<table class="wrapper" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+			<tr>
+				<td class="gap-30">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="mod-stat-padding">
+				<!--[if (gte mso 9)|(IE)]><table width="{{root.global.maxWidth}}" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-spacing:0;table-layout:fixed;width:{{root.global.maxWidth}}px;"><tbody><tr><td width="{{root.global.maxWidth}}" style="padding:0;width:{{root.global.maxWidth}}px;"><![endif]-->
+				<table class="two-column" border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%" dir="{{this.dir}}">
+					<tr>
+						<!-- Headline Text Column -->
+						<th class="two-column vert-center" dir="ltr" width="{{this.th1.width}}" valign="top">
+							<table class="column-wrapper" width="{{this.th1.width}}" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation">
+								<tr>
+									<td class="column-wrapper" align="center">
+										<table border="0" cellpadding="0" cellspacing="0" role="presentation">
+											<tr>
+												<td align="left" class="mod-stat-h1 red">
+													{{{this.th1.text}}}
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</th>
+						<!-- CTA Text Column -->
+						<th class="two-column vert-center" align="center" dir="ltr" width="{{this.th2.width}}" valign="center">
+							<table class="column-wrapper" width="{{this.th2.width}}" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation">
+								<tr>
+									<td class="mod-stat-padding">
+										<table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation">
+											<tr>
+												<td class="mod-stat-number white" width="100%" align="center" valign="center">{{{this.th2.stat}}}</td>
+											</tr>
+											<tr>
+												<td class="mod-stat-txt red">
+													{{{formatLine this.th2.text}}}
+												</td>
+											</tr>
+											<tr>
+												<td align="center">
+													{{> module_cta.html cta=this.th2.cta}}
+												</td>
+											</tr>{{#if this.th2.legalTxt}}
+											<tr>
+												<td class="mod-stat-legal-txt red">
+													{{{formatLine this.th2.legalTxt}}}
+												</td>
+											</tr>{{/if}}
+										</table>
+									</td>
+								</tr>
+							</table>
+						</th>
+					</tr>
+				</table>
+				<!--[if (gte mso 9)|(IE)]></td></tr></tbody></table><![endif]-->
+				</td>
+			</tr>
+			<tr>
+				<td class="gap-20">&nbsp;</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+<!-- Module End :: Statistics -->

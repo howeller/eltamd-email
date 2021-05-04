@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="format-detection" content="telephone=no, address=no, email=no, date=no" />
+		<meta name="x-apple-disable-message-reformatting" />
+		<!--[if !mso]><!-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<!--<![endif]-->
+		<title>{{name}}</title>
+		<!--[if (gte mso 9)|(IE)]>
+		<xml xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word">
+			<o:OfficeDocumentSettings>
+			<o:AllowPNG/>
+			<o:PixelsPerInch>96</o:PixelsPerInch>
+			</o:OfficeDocumentSettings>
+		</xml>
+		<![endif]-->
+		<!--[if !mso]><!-->
+		<link rel="stylesheet" href="https://use.typekit.net/rmy2eum.css" data-embed-ignore>
+		<!--<![endif]-->
+		<link rel="stylesheet" type="text/css" href="./cssCache/{{name}}.css">
+		<link rel="stylesheet" type="text/css" href="./cssCache/inlinedStyles.css">
+		<link rel="stylesheet" type="text/css" href="./cssCache/embeddedStyles.css" data-embed>
+		<!--[if gte mso 9]>
+		<style type="text/css" media="all"> 
+			/* Outlook 2013 Height Fix */
+			a, body, p, table, td, th, span{ font-family: Arial, Helvetica, sans-serif !important;}
+			.vml-p {margin:0;font-size:0;line-height:0;} v\:*{behavior:url(#default#VML);} 
+		</style>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="preview-txt">{{{preview_text}}}</div>
+		<div id="global">
+			<!--[if (gte mso 9)|(IE)]><table width="{{global.maxWidth}}" align="center" border="0" cellpadding="0" cellspacing="0"  role="presentation" style="border-spacing:0;table-layout:fixed;width:{{global.maxWidth}}px;"><tbody><tr><td width="{{global.maxWidth}}" style="padding:0;width:{{global.maxWidth}}px;"><![endif]-->
+			<table class="email-container" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" width="{{global.maxWidth}}">
+				{{> module_header.html}}
+				{{> module_hero.html}}
+				{{> module_divider.html}}
+				{{#each modules}}
+				<!-- Module {{@index}} Start : {{this.module}} -->
+				{{> (getName this.module) root=..}}
+				<!-- Module {{@index}} End  : {{this.module}} -->
+				{{> module_divider.html}}
+				{{/each}}
+				{{> module_footer.html}}
+			</table>
+			<!--[if (gte mso 9)|(IE)]></td></tr></tbody></table><![endif]-->
+		</div>
+	</body>
+</html>

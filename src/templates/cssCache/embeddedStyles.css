@@ -1,0 +1,65 @@
+a,h1,h2,h3,h4,p,table,td,th,span,li,ul,ol{ 
+	font-family: proxima-nova, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-size-adjust: none!important;
+}
+
+/*Keep iphone telephone numbers from turning blue*/
+*[x-apple-data-detectors], .x-gmail-data-detectors, .x-gmail-data-detectors *, .aBn {
+	color: inherit!important;
+	text-decoration: none!important;
+	font-size: inherit!important;
+	font-family: proxima-nova, Arial, sans-serif;
+	font-weight: inherit!important;
+	line-height: inherit!important;
+}
+.ExternalClass * { line-height: 100% }
+.ExternalClass{ width:100% }
+
+@media (max-width:600px) {
+	.email-container{
+		width: 100% !important;
+		overflow: hidden !important;
+		margin: 0 auto !important;
+	}
+	.body-wrapper{
+		width: 100% !important;
+		max-width: 475px !important;
+	}
+	.body-wrapper, .body-wrapper-wide, .body-container{
+		padding-left: 5% !important;
+		padding-right: 5% !important;
+	}
+	th.two-column{
+		display: block !important;
+		width: 100% !important;
+	}
+	.column-wrapper{
+		width: 100% !important;
+	}
+	.tile-wrapper, .mod-tile-txt-wrapper{
+		width: 100% !important;
+		max-width: 400px !important;
+	}
+	td.tile-wrapper{
+		text-align: center!important;
+	}
+	.tile-img{
+		display:block !important;
+		width: 100% !important;
+		max-width: 490px !important;
+		height: auto!important;
+		float: none!important;
+		clear: both!important;
+	}
+		.mobile-pad{
+		padding: 20px 0px !important;
+	}
+	.mobile-pad-bottom{
+		padding-bottom: 20px !important;
+	}
+	.mod-stat-h1{
+		text-align: center !important;
+		padding: 20px !important;
+	}
+}

@@ -1,0 +1,30 @@
+var objData = {
+	pathToRoot: "../../../",
+	listing: [{
+		folderName: "build",
+		title: "{{global.previewSiteTitle}}",
+		folderList: [
+			{{!#each this.Emails}}
+			{
+				folderName: "emails",
+				title: "Responsive Emails",
+				bannerList: [{{#each this.Emails}}{{log @key}}
+					{
+						overwriteSizeDisplay: "",
+						label: "{{@key}}",
+						src: "{{@key}}",
+						url: "",
+						w: 800,
+						h: 1150,
+						type: "html5responsive",
+						approved: false,
+						dload: true,
+						backup: false,
+						sizesArray: "[" + "resize," + "fullscreen" + "]"
+					}{{#unless @last}},{{/unless}}{{/each}}
+				]
+			}{{!--#unless @last}},{{/unless--}}
+			{{!/each}}
+		]
+	}]
+}

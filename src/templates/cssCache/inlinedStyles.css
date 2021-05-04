@@ -1,0 +1,350 @@
+body,html{
+	height: 100%;
+}
+body, #global {
+	background-color:#ffffff;
+	color:#636363;
+	margin:0;
+	min-width:100%;
+	overflow:visible;
+	padding:0;
+}
+table {
+	border-spacing:0;
+	border-collapse:collapse;
+	mso-table-lspace:0pt;
+	mso-table-rspace:0pt;
+	/*table-layout: fixed;*/
+}
+td, p{
+	margin:0;
+}
+a {
+	text-decoration: none;
+}
+img {
+	-ms-interpolation-mode: bicubic;
+	outline: none;
+	border-style: none;
+	border: 0;
+	display: block;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+}
+
+.vert-center{
+	vertical-align: middle;
+}
+/* Containers */
+
+.email-container, .footer-container{
+	font-size: 0;
+	margin:0 auto;
+	table-layout: fixed;
+	width:100%;
+	max-width:600px !important;
+}
+.inner-container{
+	font-size: 0;
+	margin:0 auto;
+	width: 500px;
+	max-width: 500px !important;
+}
+.body-wrapper{
+	margin:0 auto;
+	width: 100%;
+	max-width: 500px !important;
+}
+td.body-container{
+	text-align: center;
+	margin: 0 auto;
+	/*background-color:#ffffff;*/
+}
+.wrapper{
+	width: 100%;
+	margin:0 auto;
+}
+/*.body-wrapper-wide{
+	margin:0 auto;
+	width: 100%;
+	max-width: 515px !important;
+}
+
+td.section-container{
+	padding: 40px 0;
+}
+th.two-column{
+	padding:0;
+}
+
+td.title{
+	padding-bottom: 15px;
+}*/
+
+
+/* Colors */
+.red{ color: #a30b35 }
+.gray{ color: #707372 }
+.white{ color: #ffffff }
+/*.blue{ color: #164399 }
+.dark-grey{ color: #333333 }
+.black{ color: #000000 }*/
+.white-bg{ background-color: #ffffff }
+.red-bg{ background-color: #a30b35 }
+/* header-module */
+img.header-logo {
+  width: 74px;
+	height: 58px;
+}
+td.header-padding{
+	padding-top: 10px;
+	padding-bottom: 15px;
+}
+/*.header-txt{
+	color: #4e4e4e;
+	font-size: 10px;
+	line-height: 12px;
+	font-weight: 400;
+}*/
+/* hero-module */
+
+.hero-img, .hero-img-wrapper {
+	width: 100%;
+	max-width:600px !important;
+	height:auto;
+}
+
+td.hero-h1{
+	padding: 10px 30px;
+}
+/*.mso-pad{
+	padding-top: 70px;
+}*/
+/* Text Styles */
+img.hero-alt-txt, .hero-h1{
+	color: #ffffff;
+	font-family: niveau-grotesk, Century Gothic, CenturyGothic, AppleGothic, Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-weight: 300;
+	font-size: 32px;
+	line-height: 34px;
+	/*letter-spacing: 5px;*/
+	text-align: center;
+}
+.hero-h2{
+	color: #ffffff;
+	font-family: proxima-nova, Arial, sans-serif;
+	font-weight: 700;
+	font-size: 12px;
+	line-height: 14px;
+	text-align: center;
+}/* Tile Modules */
+
+table.tile-wrapper{
+	width: 100%;
+	max-width: 300px;
+}
+img.tile-img/*, .two-column-img-wrapper*/{
+	width: 300px;
+	max-width:300px;
+}
+
+/* Text */
+.tile-h1{
+	font-family: niveau-grotesk, Century Gothic, CenturyGothic, AppleGothic, Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-weight: 300;
+	font-size: 27px;
+	line-height: 29px;
+	letter-spacing: 3px;
+} /* CTA Buttons */
+ 
+ .cta-btn {
+	text-align: center;
+	vertical-align: middle;
+	line-height: 10px; 
+	background-color:#a30b35;
+	width:100px;
+	height:22px;
+}
+
+.cta-txt{
+	color: #ffffff;
+	display:inline-block;
+	font-family: proxima-nova, Arial, sans-serif;	
+	font-weight: 700;
+	font-size: 10px;
+	text-align: center;
+	text-decoration: none;
+	-webkit-text-size-adjust: none;
+}
+a.cta-txt{
+	/*vertical-align:middle;*/
+	line-height:22px;
+}
+span.cta-txt{
+	/*vertical-align:middle;*/
+	/*line-height:11px;*/
+}
+/* Footer
+	Outlook doesn't like padding on image, paragraph, div or anchor tags.
+*/
+td.footer-logo-pad{
+	padding: 0px 10px;
+}
+td.footer-txt-divider{
+	border-right: 1px white solid
+}
+td.footer-txt{
+	padding: 0px 10px;
+}
+td.social-icon-pad{
+	padding: 5px 10px 10px;
+}
+td.footer-legal-pad{
+	padding-right: 10px;
+}
+table.footer-bottom-row{
+	display: inline-block;
+}
+.footer-txt{
+	font-family: proxima-nova, Arial, sans-serif;
+	font-weight: 300;
+	color: white;
+	font-size: 8px;
+	line-height: 8px;
+	text-align: center;
+}
+
+/* Images */
+
+img.footer-logo {
+	font-size: 1px;
+	line-height: 1px;
+	width: 29px;
+	height: 23px;
+}
+img.social-icon{
+	font-size: 1px;
+	line-height: 1px;
+	width: 22px;
+	height: 20px;
+}/* 
+	Outlook doesn't like padding on image, paragraph, div or anchor tags.
+*/
+.preview-txt{
+	display: none;
+	max-height: 0px;
+	overflow: hidden;
+}
+.txt-center{
+	text-align: center;
+}
+/*.semi-bold{
+	font-weight: 600;
+}*/
+.underlined{
+	text-decoration: underline;
+}
+
+img{
+	font-family: niveau-grotesk, Century Gothic, CenturyGothic, AppleGothic, Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-weight: 300;
+}
+p, .body-txt/*, .headline-txt, .header-txt, .footer-txt*/{
+	font-family: proxima-nova, Arial, sans-serif;
+	margin: 0;
+}
+
+
+.body-txt{
+	font-size: 13px;
+	line-height: 15px;
+	font-weight: 300;
+	text-align: center;
+	/*letter-spacing: 0.25px;*/
+}
+.legal-txt{
+	font-family: proxima-nova, Arial, sans-serif;
+	font-weight: 300;
+	font-size: 6px;
+	line-height: 7px;
+	letter-spacing: 0.5px;
+	/*text-align: center;*/
+}
+span.body-txt-phone{
+	color: inherit !important; 
+	font-weight: bold;
+	text-decoration: none;
+	white-space:nowrap;
+	word-break:keep-all;
+}
+
+a.non-url{
+	pointer-events:none;
+	cursor:text;
+}
+.divider{
+	background-color: white;
+	font-size: 4px;
+	line-height: 4px;
+	mso-line-height-rule:exactly;
+}
+.gap-5{
+	font-size:5px;
+	line-height:5px;
+	mso-line-height-rule:exactly;
+}
+.gap-10{
+	font-size:10px;
+	line-height:10px;
+	mso-line-height-rule:exactly;
+}
+.gap-15{
+	font-size:15px;
+	line-height:15px;
+	mso-line-height-rule:exactly;
+}
+.gap-20{
+	font-size:20px;
+	line-height:20px;
+	mso-line-height-rule:exactly;
+}
+.gap-25{
+	font-size:25px;
+	line-height:25px;
+	mso-line-height-rule:exactly;
+}
+.gap-30{
+	font-size:30px;
+	line-height:30px;
+	mso-line-height-rule:exactly;
+}
+.gap-35{
+	font-size:35px;
+	line-height:35px;
+	mso-line-height-rule:exactly;
+}
+.gap-40{
+	font-size:40px;
+	line-height:40px;
+	mso-line-height-rule:exactly;
+}
+.gap-50{
+	font-size:50px;
+	line-height:50px;
+	mso-line-height-rule:exactly;
+}
+.gap-65{
+	font-size:65px;
+	line-height:65px;
+	mso-line-height-rule:exactly;
+}
+.pad-hor-10{
+	padding: 0px 10px;
+}
+.pad-20{
+	padding: 20px;
+}
+.pad-hor-20{
+	padding: 0px 20px;
+}

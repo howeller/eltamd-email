@@ -1,0 +1,42 @@
+/* hero-module */
+
+.hero-img, .hero-img-wrapper {
+	width: 100%;
+	max-width:{{global.maxWidth}}px !important;
+	height:auto;
+}
+{{!--/*table.hero-img-wrapper{
+	table-layout: auto;
+}*/
+
+#with Emails.Elta_SCA_Email as | this |}}
+table.hero-txt-wrapper{
+	width: 100%;
+	max-width: {{hero.txt.maxWidth}}px;
+}
+{{/with--}}
+
+td.hero-h1{
+	padding: 10px 30px;
+}
+/*.mso-pad{
+	padding-top: 70px;
+}*/
+/* Text Styles */
+img.hero-alt-txt, .hero-h1{
+	color: #ffffff;
+	font-family: niveau-grotesk, Century Gothic, CenturyGothic, AppleGothic, Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-weight: 300;
+	font-size: 32px;
+	line-height: 34px;
+	/*letter-spacing: 5px;*/
+	text-align: center;
+}
+.hero-h2{
+	color: #ffffff;
+	font-family: proxima-nova, Arial, sans-serif;
+	font-weight: 700;
+	font-size: 12px;
+	line-height: 14px;
+	text-align: center;
+}

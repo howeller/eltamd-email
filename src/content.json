@@ -1,0 +1,148 @@
+{
+	"global":{
+		"previewSiteTitle":"EltaMD Emails",
+		"maxWidth": 600,
+		"centerColWidth": 500,
+		"centerColWidthWide": 515,
+		"tileWidth":300,
+		"header":{
+			"logo":{
+				"src": "header_logo_2x.png",
+				"alt": "elta MD SKINCARE",
+				"width": 74,
+				"height": 58
+			}
+		},
+		"cta":{
+			"bgColor": "#a30b35",
+			"txtColor": "#ffffff",
+			"fontSize": 10,
+			"lineHeight": 11,
+			"width": 100,
+			"height": 22
+		},
+		"footer":{
+			"bgColor":"#a30b35",
+			"logo":{
+				"src": "footer_logo_2x.png",
+				"alt": "elta MD SKINCARE",
+				"width": 29,
+				"height": 23,
+				"url": "https://eltamd.com/"
+			},
+			"links":{
+				"url1":"https://eltamd.com/collections/sun-care",
+				"url2":"https://eltamd.com/collections/skin-care",
+				"url3":"https://eltamd.com/collections/best-sellers",
+				"url4":"https://eltamd.com/pages/automat"
+			},
+			"social":{
+				"width": 22,
+				"height": 20,
+				"facebook":{ 
+					"src": "social_facebook_2x.png", "alt": "facebook", 
+					"url":"https://www.facebook.com/EltaMD/"
+				},
+				"twitter":{ 
+					"src": "social_twitter_2x.png", "alt": "twitter", 
+					"url":"https://twitter.com/eltamd"
+				},
+				"instagram":{ 
+					"src": "social_instagram_2x.png", "alt": "instagram", 
+					"url":"https://www.instagram.com/eltamdskincare/"
+				},
+				"youtube":{ 
+					"src": "social_youtube_2x.png", "alt": "youtube", 
+					"url":"https://www.youtube.com/channel/UCf6qCuuob_12xlwcjj6ALJA"
+				},
+				"pinterest":{ 
+					"src": "social_pinterest_2x.png", "alt": "pinterest", 
+					"url":"https://br.pinterest.com/eltamdskincare/"
+				}
+			}
+		}
+	},
+	"Emails":{
+		"Elta_SCA_Email":{
+			"image_path":"https://eoa-editor.s3.amazonaws.com/71b8d5d9623f431d046273a49796b50940ae0f8f/ZIP_Upload_20210503155758/images/",
+			"preview_text":"This is the preview text",
+			"header":{"url":"https://www.eltamd.com/skincancerawareness?utm_medium=email&utm_source=newsletter&utm_campaign=sca21&utm_content=education"},
+			"hero":{
+				"txt":{
+					"h1":"PROTECT&nbsp;YOUR SKIN FROM HEAD&nbsp;TO TOES",
+					"h2":"This Skin Cancer Awareness Month,<br>start making sunscreen part of your daily routine.",
+					"maxWidth":345,
+					"msoPadding":"60px 0 0 0"
+				},
+				"src": "hero_talent_2x.jpg",
+				"alt": "photo",
+				"bgColor":"#a30b35",
+				"height": 271
+			},
+			"modules":[
+				{
+					"module": "module_statistic_text.html",
+					"bgColor":"#f6dc3c",
+					"dir": "ltr",
+					"th1":{
+						"width": 355,
+						"text": "COME FOR THE SKIN CANCER PREVENTION, STAY&nbsp;FOR&nbsp;THE AMAZING ANTI&#8209;AGING BENEFITS."
+					},
+					"th2":{
+						"width": 245,
+						"stat": "90%",
+						"text": "OF SKIN AGING IS<br>CAUSED BY THE SUN",
+						"cta":{ 
+							"text":"LEARN MORE",
+							"url":"https://www.eltamd.com/skincancerawareness?utm_medium=email&utm_source=newsletter&utm_campaign=sca21&utm_content=education"
+						},
+						"legalTxt":"SOURCE: SKIN CANCER ORG"
+					}
+				},
+				{
+					"module": "module_tiles.html",
+					"dir": "rtl",
+					"tile_img":{
+						"src": "pic_toes_2x.jpg",
+						"alt": "sunscreen on bare feet",
+						"url":"https://www.eltamd.com/skincancerawareness?utm_medium=email&utm_source=newsletter&utm_campaign=sca21&utm_content=sweeps"
+					},
+					"tile_text_mod":{
+						"module":"module_tile_text.html",
+						"h1": "SPF DAILY,<br>WIN DAILY",
+						"body_text":{
+							"class":"txt-center",
+							"text":"We’re giving away sun protection<br>from head to toes.",
+							"_text":["We’re giving away sun protection<br>from head to toes."]
+						},
+						"cta":{ 
+							"text":"ENTER NOW",
+							"url":"https://www.eltamd.com/skincancerawareness?utm_medium=email&utm_source=newsletter&utm_campaign=sca21&utm_content=sweeps"
+						}
+					}
+				},
+				{
+					"module": "module_tiles.html",
+					"dir": "ltr",
+					"tile_img":{
+						"src": "pic_livefreely_2x.jpg",
+						"alt": "woman in hat",
+						"url":"https://live-freely.eltamd.com/category/life-in-the-sun/?utm_medium=email&utm_source=newsletter&utm_campaign=sca21&utm_content=blog"
+					},
+					"tile_text_mod":{
+						"module":"module_tile_text.html",
+						"h1": "DID YOU KNOW...",
+						"body_text":{
+							"class": "",
+							"text": "Ears are one of the most likely spots <br>to get sunburned on your body?<br>Head to our <span style=\"font-weight:700;\">Live Freely</span> blog to learn <br>more about sun safety for every <br>body, and every part of the body."
+						},
+						"cta":{ 
+							"text":"READ MORE",
+							"url":"https://live-freely.eltamd.com/category/life-in-the-sun/?utm_medium=email&utm_source=newsletter&utm_campaign=sca21&utm_content=blog"
+						}
+					}
+				}
+			]
+		}
+	}
+}

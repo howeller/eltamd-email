@@ -1,0 +1,33 @@
+{{!}}
+<tr><!-- Module Start :: Img Tile -->
+	<td class="two-column" valign="top" bgcolor="#ffffff">
+		<!--[if (gte mso 9)|(IE)]><table width="{{root.global.maxWidth}}" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-spacing:0;table-layout:fixed;width:{{root.global.maxWidth}}px;"><tbody><tr><td width="{{root.global.maxWidth}}" style="padding:0;width:{{root.global.maxWidth}}px;"><![endif]-->
+		<table class="two-column" border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%" dir="{{this.dir}}">
+			<tr>
+				<!-- IMG Column -->
+				<th class="two-column" dir="ltr" width="50%" valign="top">
+					<table class="column-wrapper" width="{{root.global.tileWidth}}" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation">
+						<tr>
+							<td class="column-wrapper" align="center">{{#if this.tile_img.url}}
+								<a href="{{{this.tile_img.url}}}" target="_blank">{{/if}}
+									<img src="{{{serverPath root}}}{{{this.tile_img.src}}}" alt="{{{this.tile_img.alt}}}" class="tile-img" width="{{root.global.tileWidth}}"/>{{#if this.tile_img.url}}
+								</a>{{/if}}
+							</td>
+						</tr>
+					</table>
+				</th>
+				<!-- Text Column -->
+				<th class="two-column vert-center body-txt mobile-pad" align="center" dir="ltr" width="50%" valign="center" {{#if this.tile_text_mod.bgColor}}bgcolor="{{getBgColor this.tile_text_mod.bgColor root}}"{{/if}}>
+					<table class="column-wrapper" width="{{root.global.tileWidth}}" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation">
+						<tr>
+							<td class="pad-20" width="100%" align="center" valign="center">
+								{{> (getName this.tile_text_mod.module) tile=this.tile_text_mod root=root}}
+							</td>
+						</tr>
+					</table>
+				</th>
+			</tr>
+		</table>
+		<!--[if (gte mso 9)|(IE)]></td></tr></tbody></table><![endif]-->
+	</td>
+</tr><!-- Module End :: Img Tile -->
