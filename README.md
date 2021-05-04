@@ -1,12 +1,9 @@
 ## EltaMD Emails
 
-JIRA: https://hogarthdigital.atlassian.net/browse/CTUS-000
+JIRA: https://hogarthdigital.atlassian.net/browse/CTUS-230
 
-Preview: https://www.campaign.hogarthww.digital/ctus-colgate/h207077/preview/categories/eng/
-```
-u: ctus-colgate
-pw: VhiYtrba3D4+Fx3dTMFZFA==
-```
+Preview: https://www.campaign.hogarthww.digital/ctus-colgate/colgate-h207077/preview/categories/eng/index.html
+
 ---
 ### Local Build Notes
 
@@ -20,10 +17,16 @@ pw: VhiYtrba3D4+Fx3dTMFZFA==
 
 Task Name    | What it Does
 -------------|-----------
-`build` 		| Compiles the handlebar templates into HTML and inlines the CSS.
-`cleanCss` 	| Deletes everything inside `src/css/`
-`css` 			| Compiles all CSS handlebars templates/
-`default` 	| Runs `cleanCss`, `css`, and then `build` tasks in a series.
-`preview` 	| creates contentData.js for preview site.
-`watch` 		| Automatically runs the `default` task when changes to source files.
-`zip` 			| Runs the default task and then creates zip file for each email.
+`build` 			| Compiles the handlebar templates into HTML and inlines the CSS.
+`css` 				| Compiles all CSS handlebars `templates/css/`.
+`clean:css` 	| Deletes everything inside `src/css/`.
+`clean:html` 	| Deletes everything inside `build/emails/`.
+`clean:zips` 	| Deletes everything inside `build/zips/`.
+`clean`		 		| Runs  `clean:html` and `clean:zips` tasks.
+`img`			 		| Compresses all pngs and copies all images files into `build`.
+`default` 		| Runs `cleanCss`, `css`, and then `build` tasks in a series.
+`all`					| Runs `clean:css`,`css`, `build`, `img` tasks.
+`preview` 		| creates contentData.js for preview site.
+`watch` 			| Automatically runs the `default` task when changes to source files.
+`zip` 				| Runs the default task and then creates zip file for each email.
+
