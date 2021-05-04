@@ -2,7 +2,7 @@
 
 JIRA: https://hogarthdigital.atlassian.net/browse/CTUS-000
 
-Preview: https://www.campaign.hogarthww.digital/ctus-colgate/h1234567/preview/categories/eng/
+Preview: https://www.campaign.hogarthww.digital/ctus-colgate/h207077/preview/categories/eng/
 ```
 u: ctus-colgate
 pw: VhiYtrba3D4+Fx3dTMFZFA==

@@ -32,7 +32,7 @@ const dir = {
 
 const inliner = emailBuilder({ encodeSpecialChars: true, juice: {preserveImportant: true, applyWidthAttributes:false} }),
 	srcFolders = util.getFolders(dir.emails),
-	useCdnImgPath = true; // Use relative paths or CDN paths set inside the config
+	useCdnImgPath = false; // Use relative paths or CDN paths set inside the config
 
 const serverPath = (scope=this) => (useCdnImgPath && scope.image_path) ? scope.image_path : 'images/';
 
