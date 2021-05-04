@@ -31,8 +31,9 @@ const dir = {
 }
 
 const inliner = emailBuilder({ encodeSpecialChars: true, juice: {preserveImportant: true, applyWidthAttributes:false} }),
-	srcFolders = util.getFolders(dir.emails),
-	useCdnImgPath = false; // Use relative paths or CDN paths set inside the config
+	srcFolders = util.getFolders(dir.emails);
+
+let	useCdnImgPath = false; // Use relative paths or CDN paths set inside the config
 
 const serverPath = (scope=this) => (useCdnImgPath && scope.image_path) ? scope.image_path : 'images/';
 
@@ -72,9 +73,6 @@ function buildEmail(){
 			.pipe(inliner.build())
 			.pipe(rename('index.html'))
 			.pipe(gulp.dest(_dist));
-
-		// let _images = gulp.src([_src+'/images/**', dir.images+'/**'])// pipe "images" and contents
-		// 	.pipe(gulp.dest(_dist+'/images'));
 		
 		return merge( _html);
 	});
@@ -99,27 +97,7 @@ function compileCss(){
 			return { basename:path.basename, dirname:'', extname:'' };
 		}))
 		.pipe(gulp.dest(dir.cssToLine));
-  // return gulp.src([dir.css+'*.css.hbs', dir.emails+'**/*.css.hbs'])
-		// .pipe(gch(_content, hbsOptions))
-		// .pipe(rename(function (path) {
-		// 	return { basename:path.basename, dirname:'', extname:'' };
-		// }))
-		// .pipe(gulp.dest(dir.cssToLine));
 }
-/*function copyHtml(){
-
-	let task = srcFolders.map(function(folder) {
-		let _dist = path.join(dir.dist, folder),
-				_name = path.basename(folder);
-
-		return gulp.src(_dist+'/index.html')
-			.pipe(rename(_name+'.html'))
-			.pipe(gulp.dest(_dist));
-
-	});
-	let lastStream = task[task.length-1];
-	return lastStream;
-}*/
 
 function optimizeImages(){
 
@@ -147,8 +125,6 @@ function zipFiles() {
 		const _src = path.join(dir.emails, folder),
 			_dist = path.join(dir.dist, folder),
 			_name = path.basename(folder);
-			// _dest = dir.zips,
-			// _images = _dist+'/images/';
 
 		// Zip up HTML and images
 		const _html = gulp.src(_dist+'/index.html').pipe(rename(_name+'.html'));
@@ -158,11 +134,6 @@ function zipFiles() {
 		return merge( _html, _images)
 			.pipe(zip(_name+'.zip'))
 			.pipe(gulp.dest(dir.zips));
-			
-		// return gulp.src([_dist+'/images/**/*',_dist+'/'+_name+'.html'],{base:_dist})
-		// 	.pipe(zip(_name+'.zip'))
-		// 	// .pipe(rename(function(file){file.basename = folder + file.basename;}))
-		// 	.pipe(gulp.dest(_dest));
 
 	});
 	let lastStream = task[task.length-1];
@@ -190,7 +161,6 @@ gulp.task('clean:zips', () => { return del(dir.zips+'**/*'); });
 gulp.task('clean', () => { return gulp.parallel('clean:zips', 'clean:html')});
 gulp.task('default', gulp.series('clean:css','css', 'build'));
 gulp.task('all', gulp.series('clean:css','css', 'build', 'img'));
-// gulp.task('copy', copyHtml);
 gulp.task('watch', () => { gulp.watch([ dir.emails+'**/**.hbs', dir.templates+'**/**.hbs', './lib/**', dir.content], gulp.series('default')) });
 gulp.task('preview', previewCatConfig);
 gulp.task('zip', gulp.series('clean:css','css', 'build', 'img', zipFiles));
