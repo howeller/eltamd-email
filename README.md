@@ -1,10 +1,7 @@
-<img src="preview/assets/images/header_logo_2x.png" alt="" width="70"/>
+<img src="preview/assets/images/header_logo_2x.png" alt="" width="70"/> **EltaMD Emails**
 
-## EltaMD Emails
-
-JIRA: https://hogarthdigital.atlassian.net/browse/CTUS-230
-
-Preview: https://www.campaign.hogarthww.digital/ctus-colgate/colgate-h207077/preview/categories/eng/index.html
+[JIRA >>](https://hogarthdigital.atlassian.net/browse/CTUS-230) | 
+[Preview Site >>](https://www.campaign.hogarthww.digital/ctus-colgate/colgate-h207077/preview/categories/eng/index.html)
 
 ---
 ### Local Build Notes
