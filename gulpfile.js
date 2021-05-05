@@ -14,6 +14,7 @@ const del = require('del'),
 
 // Custom modules & config
 const ef = require('./lib/htmlEmailTextFormatting'),
+			tf = require ('./lib/txtFormatting'),
 			util = require('./lib/fsUtils');
 
 // Directory structure
@@ -33,7 +34,8 @@ const dir = {
 const inliner = emailBuilder({ encodeSpecialChars: true, juice: {preserveImportant: true, applyWidthAttributes:false} }),
 	srcFolders = util.getFolders(dir.emails);
 
-let	useCdnImgPath = false; // Use relative paths or CDN paths set inside the config
+let	useCdnImgPath = false,  // Use relative paths or CDN paths set inside the config
+	data;
 
 const serverPath = (scope=this) => (useCdnImgPath && scope.image_path) ? scope.image_path : 'images/';
 
@@ -47,10 +49,12 @@ function buildEmail(){
 				_content = JSON.parse(fs.readFileSync(dir.content)),
 				_name = path.basename(folder),
 				_data = _content['Emails'][_name],
-				_template = dir.templates+'/main.html.hbs';
+				_template = dir.templates+'main.html.hbs';
 
 		_data['global'] = _content['global'];
 		_data['name'] = _name; // Store the folder name as a new JSON key/value. Avoids repeating the key name in JSON.
+
+		// data = _data;// assign to global var for txt
 
 		// Configure gulp-compile-handlebars options
 		let hbsOptions = {	
@@ -119,6 +123,36 @@ function optimizeImages(){
 	return lastStream;
 }
 
+function buildTxt(){
+	let task = srcFolders.map(function(folder) {
+		let _src = path.join(dir.emails, folder),
+				_dist = path.join(dir.dist, folder),
+				_content = JSON.parse(fs.readFileSync(dir.content)),
+				_name = path.basename(folder),
+				_data = _content['Emails'][_name],
+				_template = dir.templates+'main.txt.hbs';
+
+		_data['global'] = _content['global'];
+		// _data['name'] = _name;
+
+		let hbsOptions = {	
+			ignorePartials:false,
+			batch:[_src, dir.modules, dir.templates],
+			helpers : {
+				// module : function(){return this.main_module+'.txt';},
+				formatTxt : tf.formatTxt
+			}
+		}
+		
+		return gulp.src(_template)
+				.pipe(gch(_data, hbsOptions))
+				.pipe(rename(_name+'.txt'))
+				.pipe(gulp.dest(_dist));
+	});
+	let lastStream = task[task.length-1];
+	return lastStream;
+};
+
 function zipFiles() {
 
 	let task = srcFolders.map(function(folder) {	
@@ -131,7 +165,9 @@ function zipFiles() {
 
 		const _images = gulp.src(_dist+'/images/**/*', {base:_dist});
 
-		return merge( _html, _images)
+		const _txt = gulp.src(_dist+'/*.txt');
+
+		return merge( _html, _images, _txt)
 			.pipe(zip(_name+'.zip'))
 			.pipe(gulp.dest(dir.zips));
 
@@ -153,6 +189,7 @@ function previewCatConfig(){
 
 // Tasks
 gulp.task('build', buildEmail);
+gulp.task('txt', buildTxt);
 gulp.task('build:css', compileCss); 
 gulp.task('img', optimizeImages); 
 gulp.task('clean:css', () => { return del(dir.cssToLine+'/*.css') });
@@ -160,7 +197,7 @@ gulp.task('clean:html', () => { return del(dir.dist+'**/*'); });
 gulp.task('clean:zips', () => { return del(dir.zips+'**/*'); });
 gulp.task('clean', () => { return gulp.parallel('clean:zips', 'clean:html')});
 gulp.task('default', gulp.series('clean:css','build:css', 'build'));
-gulp.task('all', gulp.series('clean:css','build:css', 'build', 'img'));
+// gulp.task('all', gulp.series('clean:css','build:css', 'build', 'img', 'txt'));
 gulp.task('watch', () => { gulp.watch([ dir.emails+'**/**.hbs', dir.templates+'**/**.hbs', './lib/**', dir.content], gulp.series('default')) });
 gulp.task('preview', previewCatConfig);
-gulp.task('zip', gulp.series('clean:css','build:css', 'build', 'img', zipFiles));
+gulp.task('zip', gulp.series('clean:css','build:css', 'build', 'img', 'txt', zipFiles));

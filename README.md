@@ -19,7 +19,7 @@ Preview: https://www.campaign.hogarthww.digital/ctus-colgate/colgate-h207077/pre
 
 Task Name    | What it Does
 -------------|-----------
-`build` 			| Compiles the handlebar templates into HTML and inlines the CSS.
+`build` 			| Compiles the `main.html` handlebar template + modules into HTML and inlines the CSS.
 `build:css` 	| Compiles all CSS handlebars `templates/css/`.
 `clean:css` 	| Deletes everything inside `src/css/`.
 `clean:html` 	| Deletes everything inside `build/emails/`.
@@ -28,6 +28,7 @@ Task Name    | What it Does
 `img`			 		| Compresses all pngs and copies all images files into `build`.
 `default` 		| Runs `clean:css`, `build:css`, and then `build` tasks in a series.
 `all`					| Runs `clean:css`,`build:css`, `build`, `img` tasks.
+`txt` 				| Compiles the `main.txt` handlebar template into backup TXT file.
 `preview` 		| creates contentData.js for preview site.
 `watch` 			| Automatically runs the `default` task when changes to source files.
 `zip` 				| Runs the default task and then creates zip file for each email.
