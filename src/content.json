@@ -30,12 +30,31 @@
 				"height": 23,
 				"url": "https://eltamd.com/"
 			},
-			"links":{
-				"url1":"https://eltamd.com/collections/sun-care",
-				"url2":"https://eltamd.com/collections/skin-care",
-				"url3":"https://eltamd.com/collections/best-sellers",
-				"url4":"https://eltamd.com/FindMyRegimen",
-				"contactus": "https://eltamd.com/pages/contact-us"
+			"menu":{
+				"btn1":{
+					"text": "SUN CARE",
+					"url": "https://eltamd.com/collections/sun-care"
+				},
+				"btn2":{
+					"text": "SKIN CARE",
+					"url": "https://eltamd.com/collections/skin-care"
+				},
+				"btn3":{
+					"text": "BEST SELLERS",
+					"url": "https://eltamd.com/collections/best-sellers"
+				},
+				"btn4":{
+					"text": "FIND MY REGIMEN",
+					"url": "https://eltamd.com/FindMyRegimen"
+				},
+				"contactus":{
+				 "text":"Contact Us",
+				 "url": "https://eltamd.com/pages/contact-us"
+				},
+				"unsubscribe":{
+				 "text":"Unsubscribe",
+				 "url": "###"
+				}
 			},
 			"social":{
 				"width": 22,
@@ -60,7 +79,8 @@
 					"src": "social_pinterest_2x.png", "alt": "pinterest", 
 					"url":"https://br.pinterest.com/eltamdskincare/"
 				}
-			}
+			},
+			"legal": "©2021 EltaMD, 15601 Dallas Parkway Suite 1000, Addison, TX&nbsp;75001. All&nbsp;rights&nbsp;reserved."
 		}
 	},
 	"Emails":{
