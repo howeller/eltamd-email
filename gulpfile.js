@@ -73,7 +73,7 @@ function buildEmail(){
 			.pipe(inliner.build())
 			.pipe(rename('index.html'))
 			.pipe(gulp.dest(_dist));
-		
+``		
 		return merge( _html);
 	});
 	let lastStream = task[task.length-1];
@@ -153,14 +153,14 @@ function previewCatConfig(){
 
 // Tasks
 gulp.task('build', buildEmail);
-gulp.task('css', compileCss); 
+gulp.task('build:css', compileCss); 
 gulp.task('img', optimizeImages); 
 gulp.task('clean:css', () => { return del(dir.cssToLine+'/*.css') });
 gulp.task('clean:html', () => { return del(dir.dist+'**/*'); });
 gulp.task('clean:zips', () => { return del(dir.zips+'**/*'); });
 gulp.task('clean', () => { return gulp.parallel('clean:zips', 'clean:html')});
-gulp.task('default', gulp.series('clean:css','css', 'build'));
-gulp.task('all', gulp.series('clean:css','css', 'build', 'img'));
+gulp.task('default', gulp.series('clean:css','build:css', 'build'));
+gulp.task('all', gulp.series('clean:css','build:css', 'build', 'img'));
 gulp.task('watch', () => { gulp.watch([ dir.emails+'**/**.hbs', dir.templates+'**/**.hbs', './lib/**', dir.content], gulp.series('default')) });
 gulp.task('preview', previewCatConfig);
-gulp.task('zip', gulp.series('clean:css','css', 'build', 'img', zipFiles));
+gulp.task('zip', gulp.series('clean:css','build:css', 'build', 'img', zipFiles));
