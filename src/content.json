@@ -104,6 +104,7 @@
 			"modules":[
 				{
 					"module": "module_statistic_text.html",
+					"module_txt": "module_statistic_text.txt",
 					"bgColor":"#f6dc3c",
 					"dir": "ltr",
 					"th1":{
@@ -123,6 +124,7 @@
 				},
 				{
 					"module": "module_tiles.html",
+					"module_txt": "module_tiles.txt",
 					"dir": "rtl",
 					"tile_img":{
 						"src": "pic_toes_2x.jpg",
@@ -143,6 +145,7 @@
 				},
 				{
 					"module": "module_tiles.html",
+					"module_txt": "module_tiles.txt",
 					"dir": "ltr",
 					"tile_img":{
 						"src": "pic_livefreely_2x.jpg",

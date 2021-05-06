@@ -26,6 +26,7 @@ const dir = {
 	emails:'./src/emails/',
 	images:'./src/shared_images/',
 	modules:'./src/templates/modules/',
+	txt:'./src/templates/txt/',
 	preview:'./preview/categories/eng/',
 	templates:'./src/templates/',
 	zips:'build/zips/'
@@ -137,9 +138,9 @@ function buildTxt(){
 
 		let hbsOptions = {	
 			ignorePartials:false,
-			batch:[_src, dir.modules, dir.templates],
+			batch:[_src, dir.txt, dir.templates],
 			helpers : {
-				// module : function(){return this.main_module+'.txt';},
+				getName : function(arg){ return arg },
 				formatTxt : tf.formatTxt
 			}
 		}
@@ -196,7 +197,8 @@ gulp.task('clean:css', () => { return del(dir.cssToLine+'/*.css') });
 gulp.task('clean:html', () => { return del(dir.dist+'**/*'); });
 gulp.task('clean:zips', () => { return del(dir.zips+'**/*'); });
 gulp.task('clean', () => { return gulp.parallel('clean:zips', 'clean:html')});
-gulp.task('default', gulp.series('clean:css','build:css', 'build'));
+gulp.task('default', gulp.series('build:txt'));
+// gulp.task('default', gulp.series('clean:css','build:css', 'build'));
 gulp.task('all', gulp.series('clean:css','build:css', 'build', 'img', 'build:txt'));
 gulp.task('watch', () => { gulp.watch([ dir.emails+'**/**.hbs', dir.templates+'**/**.hbs', './lib/**', dir.content], gulp.series('default')) });
 gulp.task('preview', previewCatConfig);

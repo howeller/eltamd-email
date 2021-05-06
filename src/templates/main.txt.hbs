@@ -8,33 +8,11 @@
 {{{hero.url}}}
 
 ******************************************************************
-{{#with modules.[0] as | module |}}
+{{!> module_statistic_text.txt module=modules.[0]}}
+{{#each modules}}
 
-{{{formatTxt module.th1.text}}}
-{{{module.th2.stat}}} {{{formatTxt module.th2.text}}}
-{{{module.th2.cta.text}}}
-{{{module.th2.cta.url}}}
-
-{{/with}}
+{{> (getName this.module_txt) module=this}}{{!log this}}
 ******************************************************************
-{{#with modules.[1].tile_text_mod as | module |}}
-
-{{{formatTxt module.h1}}}
-{{{formatTxt module.body_text.text}}}
-{{{formatTxt module.cta.text}}}
-{{{module.cta.url}}}
-
-{{/with}}
-******************************************************************
-{{#with modules.[2].tile_text_mod as | module |}}
-
-{{{formatTxt module.h1}}}
-{{{formatTxt module.body_text.text}}}
-{{{formatTxt module.cta.text}}}
-{{{module.cta.url}}}
-
-{{/with}}
-******************************************************************
+{{/each}}
 
 {{>footer.txt}}
-
