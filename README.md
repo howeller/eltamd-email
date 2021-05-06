@@ -9,7 +9,10 @@
 - All HTML use handlebars templates as modules and compiled via [gulp-compile-handlebars](https://www.npmjs.com/package/gulp-compile-handlebars)
 - All CSS is inlined using via [gulp-email-builder-min](https://www.npmjs.com/package/gulp-email-builder-min)
 - To run the gulp tasks run `npm install` from the command line to install `node_modules` (not included in this repo)
-- The email content lives in `src/content.json`.
+- The email templates are separated into modules so you can reuse/reorder different content blocks in each individual email. These are located inside `src/templates/modules/`.
+- The email content and module order lives in `src/content.json`.
+- For each html module in `src/templates/modules/` you should create a txt template and place inside `src/templates/txt/`.
+- Images that are used in all emails are placed inside `src/shared_images/`.
 
 ---
 ### Gulp Tasks
