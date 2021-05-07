@@ -5,6 +5,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="format-detection" content="telephone=no, address=no, email=no, date=no">
 		<meta name="x-apple-disable-message-reformatting">
+		<meta name="color-scheme" content="light dark">
+		<meta name="supported-color-schemes" content="light dark">
 		<!--[if !mso]><!-->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<!--<![endif]-->
@@ -41,6 +43,51 @@ a,h1,h2,h3,h4,p,table,td,th,span,li,ul,ol{
 .ExternalClass * { line-height: 100% }
 .ExternalClass{ width:100% }
 
+:root {
+	color-scheme: light dark;
+	supported-color-schemes: light dark;
+}
+
+.white{ color: #fff !important }
+[data-ogsc] .white{ color: #fff !important }
+
+@media (prefers-color-scheme: dark) {
+	/* Shows Dark Mode-Only Content, Like Images */
+	.dark-img-wrapper, .dark-img {
+		display: block !important;
+		width: auto !important;
+		overflow: visible !important;
+		float: none !important;
+		max-height: inherit !important;
+		max-width: inherit !important;
+		line-height: auto !important;
+		margin-top: 0px !important;
+		visibility: inherit !important;
+	}
+	[data-ogsc] .dark-img-wrapper { 
+		display: block !important;
+		width: auto !important;
+		overflow: visible !important;
+		float: none !important;
+		max-height: inherit !important;
+		max-width: inherit !important;
+		line-height: auto !important;
+		margin-top: 0px !important;
+		visibility: inherit !important;
+	}
+	/* Hides Light Mode-Only Content, Like Images */
+	.light-img {
+		display: none;
+		display: none !important; 
+	}
+	[data-ogsc] .light-img { 
+		display:none; 
+		display:none !important;
+	}
+	
+	.darkmode, .white-bg { background-color: #272623 !important; }
+	.yellow-bg { background-color: #c5aa03 !important; }
+}
 @media (max-width:600px) {
 	.email-container{
 		width: 100% !important;
@@ -99,7 +146,7 @@ a,h1,h2,h3,h4,p,table,td,th,span,li,ul,ol{
 	</head>
 	<body style="height: 100%; background-color: #ffffff; color: #707372; margin: 0; min-width: 100%; overflow: visible; padding: 0;">
 		<div class="preview-txt" style="display: none; max-height: 0px; overflow: hidden;">It's Skin Cancer Awareness Month&#8212;protect your skin with the #1 Derm Recommended Sunscreen.</div>
-		<div id="global" style="background-color: #ffffff; color: #707372; margin: 0; min-width: 100%; overflow: visible; padding: 0;">
+		<div id="global" class="white-bg" style="background-color: #ffffff; color: #707372; margin: 0; min-width: 100%; overflow: visible; padding: 0;">
 			<!--[if (gte mso 9)|(IE)]><table width="600" align="center" border="0" cellpadding="0" cellspacing="0"  role="presentation" style="border-spacing:0;table-layout:fixed;width:600px;"><tbody><tr><td width="600" style="padding:0;width:600px;"><![endif]-->
 			<table class="email-container" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" width="600" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-size: 0; margin: 0 auto; table-layout: fixed; width: 100%; max-width: 600px !important;">
 				<tr><!-- Header Start -->
@@ -108,7 +155,10 @@ a,h1,h2,h3,h4,p,table,td,th,span,li,ul,ol{
 							<tr>
 								<td align="center" class="header-padding" style="margin: 0; padding-top: 10px; padding-bottom: 15px;">
 									<a href="https://www.eltamd.com/skincancerawareness?utm_medium=email&utm_source=newsletter&utm_campaign=sca21&utm_content=education" target="_blank" style="text-decoration: none;">
-										<img src="images/header_logo_2x.png" alt="elta MD&#174; SKINCARE" class="header-logo" width="74" height="58" style="-ms-interpolation-mode: bicubic; outline: none; border-style: none; border: 0; display: block; margin: 0; padding: 0; text-decoration: none; font-family: niveau-grotesk, Century Gothic, CenturyGothic, AppleGothic, Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: 300; width: 74px; height: 58px;">
+										<img src="https://eoa-editor.s3.amazonaws.com/6cf5508da12f8ae6e814e160748b745545a70625%2FEltaMD%2Fheader_logo_2x.png" alt="elta MD&#174; SKINCARE" class="header-logo light-img" width="74" height="58" border="0" style="-ms-interpolation-mode: bicubic; outline: none; border-style: none; border: 0; display: block; margin: 0; padding: 0; text-decoration: none; font-family: niveau-grotesk, Century Gothic, CenturyGothic, AppleGothic, Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: 300; width: 74px; height: 58px;">
+										<!--[if !mso]><! --><div class="dark-img-wrapper" align="center" style="display: none; overflow: hidden; float: left; width: 0px; max-height: 0px; max-width: 0px; line-height: 0px; visibility: hidden;">
+				          		<img src="https://eoa-editor.s3.amazonaws.com/6cf5508da12f8ae6e814e160748b745545a70625%2FEltaMD%2Fheader_logo_dark_2x.png" alt="elta MD&#174; SKINCARE" class="header-logo dark-img" width="74" height="58" style="-ms-interpolation-mode: bicubic; outline: none; border-style: none; border: 0; display: block; margin: 0; padding: 0; text-decoration: none; font-family: niveau-grotesk, Century Gothic, CenturyGothic, AppleGothic, Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: 300; width: 74px; height: 58px; color: #ffffff;" border="0">
+				          	</div><!--<![endif]-->
 									</a>
 								</td>
 							</tr>
@@ -120,43 +170,46 @@ a,h1,h2,h3,h4,p,table,td,th,span,li,ul,ol{
 					<td align="center" style="margin: 0;">
 						<!--[if (gte mso 9)|(IE)]><table width="600" border="0" cellpadding="0" cellspacing="0" style="border-spacing:0;table-layout:fixed;width:600px;"><tbody><tr><td width="600" style="padding:0;width:600px;"><![endif]-->
 						<a href="https://www.eltamd.com/skincancerawareness?utm_medium=email&utm_source=newsletter&utm_campaign=sca21&utm_content=education" target="_blank" style="text-decoration: none;">
-						<table class="hero-img-wrapper" width="600" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; height: auto; max-width: 600px !important;">
-							<tr>
-								<td align="center" bgcolor="#a30b35" background="images/hero_talent_2x.jpg" class="red-bg" width="100%" height="271" valign="center" style="margin: 0; background-color: #a30b35; background: url('images/hero_talent_2x.jpg') center/cover no-repeat #a30b35; background-size: 100%; background-size: cover; vertical-align: middle;">
-									<!--[if gte mso 9]>
-									<v:image src="images/hero_talent_2x.jpg" xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style=" border:0; display:inline-block; width:600px; height:271px;"/>
-									<v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="border:0; display:inline-block; position:absolute; width:600px; height:271px; href="https://www.eltamd.com/skincancerawareness?utm_medium=email&utm_source=newsletter&utm_campaign=sca21&utm_content=education">
-									<v:fill opacity="0%" color="#a30b35"/>
-									<v:textbox inset="0,0,0,0"><![endif]-->
-										<div>
-											<table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-												<tr>
-													<td class="vert-center" valign="middle" align="left" style="margin: 0; vertical-align: middle;">
-														<!-- Hero H1 -->
-														<!--[if (gte mso 9)|(IE)]><table width="345" border="0" cellpadding="0" cellspacing="0" style="border-spacing:0; table-layout:fixed; width:345px;"><tbody><tr><td width="345" style="padding:60px 0 0 0; width:345px;"><![endif]-->
-														<table class="hero-txt-wrapper" border="0" cellpadding="0" cellspacing="0" role="presentation" width="345" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; max-width: 345px;">
-															<tr>
-																<td align="center" class="hero-h1" style="margin: 0; color: #ffffff; font-family: niveau-grotesk, Century Gothic, CenturyGothic, AppleGothic, Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: 300; font-size: 32px; line-height: 34px; text-align: center; padding: 10px 30px;">
-																	<a href="https://www.eltamd.com/skincancerawareness?utm_medium=email&utm_source=newsletter&utm_campaign=sca21&utm_content=education" target="_blank" class="hero-h1" style="text-decoration: none; color: #ffffff; font-family: niveau-grotesk, Century Gothic, CenturyGothic, AppleGothic, Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: 300; font-size: 32px; line-height: 34px; text-align: center;">
-																		<span class="hero-h1" style="color: #ffffff; font-family: niveau-grotesk, Century Gothic, CenturyGothic, AppleGothic, Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: 300; font-size: 32px; line-height: 34px; text-align: center;">PROTECT&nbsp;YOUR SKIN FROM HEAD&nbsp;TO&nbsp;TOES</span>
-																	</a>
-																</td>
-															</tr>
-															<tr>
-																<td class="hero-h2" style="margin: 0; color: #ffffff; font-family: proxima-nova, Arial, sans-serif; font-weight: 700; font-size: 12px; line-height: 14px; text-align: center;">
-																	This Skin Cancer Awareness Month,<br>start making sunscreen part of your daily&nbsp;routine.
-																</td>
-															</tr>
-														</table>
-														<!--[if (gte mso 9)|(IE)]></td></tr></tbody></table><![endif]-->
-													</td>
-												</tr>
-											</table>
-										</div>
-									<!--[if gte mso 9]></v:textbox></v:fill></v:rect></v:image><![endif]-->
-								</td>
-							</tr>
-						</table>
+							<table class="hero-img-wrapper" width="600" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; height: auto; max-width: 600px !important;">
+								<tr>
+									<td align="center" bgcolor="#a30b35" background="https://eoa-editor.s3.amazonaws.com/6cf5508da12f8ae6e814e160748b745545a70625%2FEltaMD%2Fhero_talent_2x.jpg" class="red-bg" width="100%" height="271" valign="center" style="margin: 0; background-color: #a30b35; background: url('https://eoa-editor.s3.amazonaws.com/6cf5508da12f8ae6e814e160748b745545a70625%2FEltaMD%2Fhero_talent_2x.jpg') center/cover no-repeat #a30b35; background-size: 100%; background-size: cover; vertical-align: middle;">
+											<!--[if gte mso 9]>
+											<v:image src="https://eoa-editor.s3.amazonaws.com/6cf5508da12f8ae6e814e160748b745545a70625%2FEltaMD%2Fhero_talent_2x.jpg" xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="border:0; display:inline-block; width:600px; height:271px;"/>
+											<v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="border:0; display:inline-block; position:absolute; width:600px; height:271px;" href="https://www.eltamd.com/skincancerawareness?utm_medium=email&utm_source=newsletter&utm_campaign=sca21&utm_content=education">
+												<v:fill opacity="0%" color="#a30b35"/>
+												<v:textbox inset="0,0,0,0">
+											<![endif]-->
+											<div>
+												<div style="font-size: 0;">
+													<table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+														<tr>
+															<td class="vert-center" valign="middle" align="left" style="margin: 0; vertical-align: middle;">
+																<!-- Hero H1 -->
+																<!--[if (gte mso 9)|(IE)]><table width="345" border="0" cellpadding="0" cellspacing="0" style="border-spacing:0; table-layout:fixed; width:345px;"><tbody><tr><td width="345" style="padding:60px 0 0 0; width:345px;"><![endif]-->
+																<table class="hero-txt-wrapper" border="0" cellpadding="0" cellspacing="0" role="presentation" width="345" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; max-width: 345px;">
+																	<tr>
+																		<td align="center" class="hero-h1" style="margin: 0; color: #ffffff; font-family: niveau-grotesk, Century Gothic, CenturyGothic, AppleGothic, Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: 300; font-size: 32px; line-height: 34px; text-align: center; padding: 10px 30px;">
+																			<a href="https://www.eltamd.com/skincancerawareness?utm_medium=email&utm_source=newsletter&utm_campaign=sca21&utm_content=education" target="_blank" class="hero-h1" style="text-decoration: none; color: #ffffff; font-family: niveau-grotesk, Century Gothic, CenturyGothic, AppleGothic, Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: 300; font-size: 32px; line-height: 34px; text-align: center;">
+																				<span class="hero-h1" style="color: #ffffff; font-family: niveau-grotesk, Century Gothic, CenturyGothic, AppleGothic, Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: 300; font-size: 32px; line-height: 34px; text-align: center;">PROTECT&nbsp;YOUR SKIN FROM HEAD&nbsp;TO&nbsp;TOES</span>
+																			</a>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td class="hero-h2" style="margin: 0; color: #ffffff; font-family: proxima-nova, Arial, sans-serif; font-weight: 700; font-size: 12px; line-height: 14px; text-align: center;">
+																			This Skin Cancer Awareness Month,<br>start making sunscreen part of your daily&nbsp;routine.
+																		</td>
+																	</tr>
+																</table>
+																<!--[if (gte mso 9)|(IE)]></td></tr></tbody></table><![endif]-->
+															</td>
+														</tr>
+													</table>
+												</div>
+											</div>
+										<!--[if gte mso 9]></v:textbox></v:rect><![endif]-->
+									</td>
+								</tr>
+							</table>
 						</a>
 						<!--[if (gte mso 9)|(IE)]></td></tr></tbody></table><![endif]-->
 					</td>
@@ -165,8 +218,7 @@ a,h1,h2,h3,h4,p,table,td,th,span,li,ul,ol{
 					<td class="divider white-bg" width="100%" style="margin: 0; background-color: white; font-size: 4px; line-height: 4px; mso-line-height-rule: exactly;">&nbsp;</td>
 				</tr>
 				<!-- Module 0 Start : module_statistic_text.html -->
-				<tr><!-- Module Start :: Statistics -->
-					<td class="two-column" valign="top" bgcolor="#f6dc3c" style="margin: 0;">
+				<tr>	<td class="two-column yellow-bg" valign="top" style="margin: 0; background-color: #f6dc3c;">
 						<table class="wrapper" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; margin: 0 auto;">
 							<tr>
 								<td class="gap-30" style="margin: 0; font-size: 30px; line-height: 30px; mso-line-height-rule: exactly;">&nbsp;</td>
@@ -211,7 +263,7 @@ a,h1,h2,h3,h4,p,table,td,th,span,li,ul,ol{
 																	<table class="cta-wrapper" align="center" width="100" height="22" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100px; max-width: 100px;" border="0" cellpadding="0" cellspacing="0" role="presentation">
 																		<tr>
 																			<td class="cta-btn vert-center" align="center" valign="middle" style="margin: 0; text-align: center; vertical-align: middle; line-height: 11px; background-color: #a30b35; width: 100px; height: 22px;">
-																				<a href="https://www.eltamd.com/skincancerawareness?utm_medium=email&utm_source=newsletter&utm_campaign=sca21&utm_content=education" target="_blank" class="cta-txt" style="color: #ffffff; display: inline-block; font-family: proxima-nova, Arial, sans-serif; font-weight: 700; font-size: 10px; text-align: center; text-decoration: none; -webkit-text-size-adjust: none; line-height: 22px;"><span class="cta-txt" style="color: #ffffff; display: inline-block; font-family: proxima-nova, Arial, sans-serif; font-weight: 700; font-size: 10px; text-align: center; text-decoration: none; -webkit-text-size-adjust: none;">LEARN MORE</span></a>
+																				<a href="https://www.eltamd.com/skincancerawareness?utm_medium=email&utm_source=newsletter&utm_campaign=sca21&utm_content=education" target="_blank" class="cta-txt" style="color: #ffffff; display: inline-block; font-family: proxima-nova, Arial, sans-serif; font-weight: 700; font-size: 10px; text-align: center; text-decoration: none; -webkit-text-size-adjust: none; vertical-align: middle; line-height: 22px;"><span class="cta-txt" style="color: #ffffff; display: inline-block; font-family: proxima-nova, Arial, sans-serif; font-weight: 700; font-size: 10px; text-align: center; text-decoration: none; -webkit-text-size-adjust: none; vertical-align: middle; line-height: 11px;">LEARN MORE</span></a>
 																			</td>
 																		</tr>
 																	</table>
@@ -238,14 +290,13 @@ a,h1,h2,h3,h4,p,table,td,th,span,li,ul,ol{
 						</table>
 					</td>
 				</tr>
-				<!-- Module End :: Statistics -->
 				<!-- Module 0 End  : module_statistic_text.html -->
 				<tr>
 					<td class="divider white-bg" width="100%" style="margin: 0; background-color: white; font-size: 4px; line-height: 4px; mso-line-height-rule: exactly;">&nbsp;</td>
 				</tr>
 				<!-- Module 1 Start : module_tiles.html -->
-				<tr><!-- Module Start :: Img Tile -->
-					<td class="two-column" valign="top" bgcolor="#ffffff" style="margin: 0;">
+				<tr>
+					<td class="two-column white-bg" valign="top" style="margin: 0; background-color: #ffffff;">
 						<!--[if (gte mso 9)|(IE)]><table width="600" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-spacing:0;table-layout:fixed;width:600px;"><tbody><tr><td width="600" style="padding:0;width:600px;"><![endif]-->
 						<table class="two-column" border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%" dir="rtl" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
 							<tr>
@@ -255,18 +306,18 @@ a,h1,h2,h3,h4,p,table,td,th,span,li,ul,ol{
 										<tr>
 											<td class="column-wrapper" align="center" style="margin: 0;">
 												<a href="https://www.eltamd.com/skincancerawareness?utm_medium=email&utm_source=newsletter&utm_campaign=sca21&utm_content=sweeps" target="_blank" style="text-decoration: none;">
-													<img src="images/pic_toes_2x.jpg" alt="sunscreen on bare feet" class="tile-img" width="300" style="-ms-interpolation-mode: bicubic; outline: none; border-style: none; border: 0; display: block; margin: 0; padding: 0; text-decoration: none; font-family: niveau-grotesk, Century Gothic, CenturyGothic, AppleGothic, Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: 300; width: 300px; max-width: 300px;">
+													<img src="https://eoa-editor.s3.amazonaws.com/6cf5508da12f8ae6e814e160748b745545a70625%2FEltaMD%2Fpic_toes_2x.jpg" alt="sunscreen on bare feet" class="tile-img" width="300" style="-ms-interpolation-mode: bicubic; outline: none; border-style: none; border: 0; display: block; margin: 0; padding: 0; text-decoration: none; font-family: niveau-grotesk, Century Gothic, CenturyGothic, AppleGothic, Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: 300; width: 300px; max-width: 300px;">
 												</a>
 											</td>
 										</tr>
 									</table>
 								</th>
 								<!-- Text Column -->
-								<th class="two-column vert-center body-txt mobile-pad" align="center" dir="ltr" width="50%" valign="center" style="vertical-align: middle; font-family: proxima-nova, Arial, sans-serif; margin: 0; font-size: 13px; line-height: 15px; font-weight: 300; text-align: center;">
+								<th class="two-column vert-center body-txt mobile-pad white-bg" align="center" dir="ltr" width="50%" valign="center" style="vertical-align: middle; background-color: #ffffff; font-family: proxima-nova, Arial, sans-serif; margin: 0; font-size: 13px; line-height: 15px; font-weight: 300; text-align: center;">
 									<table class="column-wrapper" width="300" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
 										<tr>
 											<td class="pad-20" width="100%" align="center" valign="center" style="margin: 0; padding: 20px;">
-												<!-- Tile Module Start :: module_tile_text.html -->
+												<!-- Text Tile Module Start :: module_tile_text.html -->
 												<table class="mod-tile-txt-wrapper" width align="center" border="0" cellpadding="0" cellspacing="0" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
 													<tr>
 														<td align="center" class="red tile-h1" style="margin: 0; color: #a30b35; font-family: niveau-grotesk, Century Gothic, CenturyGothic, AppleGothic, Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: 300; font-size: 27px; line-height: 29px; letter-spacing: 3px;">
@@ -289,14 +340,14 @@ a,h1,h2,h3,h4,p,table,td,th,span,li,ul,ol{
 															<table class="cta-wrapper" align="center" width="100" height="22" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100px; max-width: 100px;" border="0" cellpadding="0" cellspacing="0" role="presentation">
 																<tr>
 																	<td class="cta-btn vert-center" align="center" valign="middle" style="margin: 0; text-align: center; vertical-align: middle; line-height: 11px; background-color: #a30b35; width: 100px; height: 22px;">
-																		<a href="https://www.eltamd.com/skincancerawareness?utm_medium=email&utm_source=newsletter&utm_campaign=sca21&utm_content=sweeps" target="_blank" class="cta-txt" style="color: #ffffff; display: inline-block; font-family: proxima-nova, Arial, sans-serif; font-weight: 700; font-size: 10px; text-align: center; text-decoration: none; -webkit-text-size-adjust: none; line-height: 22px;"><span class="cta-txt" style="color: #ffffff; display: inline-block; font-family: proxima-nova, Arial, sans-serif; font-weight: 700; font-size: 10px; text-align: center; text-decoration: none; -webkit-text-size-adjust: none;">ENTER NOW</span></a>
+																		<a href="https://www.eltamd.com/skincancerawareness?utm_medium=email&utm_source=newsletter&utm_campaign=sca21&utm_content=sweeps" target="_blank" class="cta-txt" style="color: #ffffff; display: inline-block; font-family: proxima-nova, Arial, sans-serif; font-weight: 700; font-size: 10px; text-align: center; text-decoration: none; -webkit-text-size-adjust: none; vertical-align: middle; line-height: 22px;"><span class="cta-txt" style="color: #ffffff; display: inline-block; font-family: proxima-nova, Arial, sans-serif; font-weight: 700; font-size: 10px; text-align: center; text-decoration: none; -webkit-text-size-adjust: none; vertical-align: middle; line-height: 11px;">ENTER NOW</span></a>
 																	</td>
 																</tr>
 															</table>
 														</td>
 													</tr>
 												</table><!--[if gte mso 16]><span style="font-size:0px;line-height:0px;"><br>&nbsp;</span><![endif]-->
-												<!-- Tile Module End :: module_tile_text.html -->
+												<!-- Text Tile Module End :: module_tile_text.html -->
 											</td>
 										</tr>
 									</table>
@@ -305,14 +356,14 @@ a,h1,h2,h3,h4,p,table,td,th,span,li,ul,ol{
 						</table>
 						<!--[if (gte mso 9)|(IE)]></td></tr></tbody></table><![endif]-->
 					</td>
-				</tr><!-- Module End :: Img Tile -->
+				</tr>
 				<!-- Module 1 End  : module_tiles.html -->
 				<tr>
 					<td class="divider white-bg" width="100%" style="margin: 0; background-color: white; font-size: 4px; line-height: 4px; mso-line-height-rule: exactly;">&nbsp;</td>
 				</tr>
 				<!-- Module 2 Start : module_tiles.html -->
-				<tr><!-- Module Start :: Img Tile -->
-					<td class="two-column" valign="top" bgcolor="#ffffff" style="margin: 0;">
+				<tr>
+					<td class="two-column white-bg" valign="top" style="margin: 0; background-color: #ffffff;">
 						<!--[if (gte mso 9)|(IE)]><table width="600" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-spacing:0;table-layout:fixed;width:600px;"><tbody><tr><td width="600" style="padding:0;width:600px;"><![endif]-->
 						<table class="two-column" border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%" dir="ltr" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
 							<tr>
@@ -322,18 +373,18 @@ a,h1,h2,h3,h4,p,table,td,th,span,li,ul,ol{
 										<tr>
 											<td class="column-wrapper" align="center" style="margin: 0;">
 												<a href="https://live-freely.eltamd.com/category/life-in-the-sun/?utm_medium=email&utm_source=newsletter&utm_campaign=sca21&utm_content=blog" target="_blank" style="text-decoration: none;">
-													<img src="images/pic_livefreely_2x.jpg" alt="woman in hat" class="tile-img" width="300" style="-ms-interpolation-mode: bicubic; outline: none; border-style: none; border: 0; display: block; margin: 0; padding: 0; text-decoration: none; font-family: niveau-grotesk, Century Gothic, CenturyGothic, AppleGothic, Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: 300; width: 300px; max-width: 300px;">
+													<img src="https://eoa-editor.s3.amazonaws.com/6cf5508da12f8ae6e814e160748b745545a70625%2FEltaMD%2Fpic_livefreely_2x.jpg" alt="woman in hat" class="tile-img" width="300" style="-ms-interpolation-mode: bicubic; outline: none; border-style: none; border: 0; display: block; margin: 0; padding: 0; text-decoration: none; font-family: niveau-grotesk, Century Gothic, CenturyGothic, AppleGothic, Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: 300; width: 300px; max-width: 300px;">
 												</a>
 											</td>
 										</tr>
 									</table>
 								</th>
 								<!-- Text Column -->
-								<th class="two-column vert-center body-txt mobile-pad" align="center" dir="ltr" width="50%" valign="center" style="vertical-align: middle; font-family: proxima-nova, Arial, sans-serif; margin: 0; font-size: 13px; line-height: 15px; font-weight: 300; text-align: center;">
+								<th class="two-column vert-center body-txt mobile-pad white-bg" align="center" dir="ltr" width="50%" valign="center" style="vertical-align: middle; background-color: #ffffff; font-family: proxima-nova, Arial, sans-serif; margin: 0; font-size: 13px; line-height: 15px; font-weight: 300; text-align: center;">
 									<table class="column-wrapper" width="300" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
 										<tr>
 											<td class="pad-20" width="100%" align="center" valign="center" style="margin: 0; padding: 20px;">
-												<!-- Tile Module Start :: module_tile_text.html -->
+												<!-- Text Tile Module Start :: module_tile_text.html -->
 												<table class="mod-tile-txt-wrapper" width align="center" border="0" cellpadding="0" cellspacing="0" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
 													<tr>
 														<td align="center" class="red tile-h1" style="margin: 0; color: #a30b35; font-family: niveau-grotesk, Century Gothic, CenturyGothic, AppleGothic, Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: 300; font-size: 27px; line-height: 29px; letter-spacing: 3px;">
@@ -356,14 +407,14 @@ a,h1,h2,h3,h4,p,table,td,th,span,li,ul,ol{
 															<table class="cta-wrapper" align="center" width="100" height="22" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100px; max-width: 100px;" border="0" cellpadding="0" cellspacing="0" role="presentation">
 																<tr>
 																	<td class="cta-btn vert-center" align="center" valign="middle" style="margin: 0; text-align: center; vertical-align: middle; line-height: 11px; background-color: #a30b35; width: 100px; height: 22px;">
-																		<a href="https://live-freely.eltamd.com/category/life-in-the-sun/?utm_medium=email&utm_source=newsletter&utm_campaign=sca21&utm_content=blog" target="_blank" class="cta-txt" style="color: #ffffff; display: inline-block; font-family: proxima-nova, Arial, sans-serif; font-weight: 700; font-size: 10px; text-align: center; text-decoration: none; -webkit-text-size-adjust: none; line-height: 22px;"><span class="cta-txt" style="color: #ffffff; display: inline-block; font-family: proxima-nova, Arial, sans-serif; font-weight: 700; font-size: 10px; text-align: center; text-decoration: none; -webkit-text-size-adjust: none;">READ MORE</span></a>
+																		<a href="https://live-freely.eltamd.com/category/life-in-the-sun/?utm_medium=email&utm_source=newsletter&utm_campaign=sca21&utm_content=blog" target="_blank" class="cta-txt" style="color: #ffffff; display: inline-block; font-family: proxima-nova, Arial, sans-serif; font-weight: 700; font-size: 10px; text-align: center; text-decoration: none; -webkit-text-size-adjust: none; vertical-align: middle; line-height: 22px;"><span class="cta-txt" style="color: #ffffff; display: inline-block; font-family: proxima-nova, Arial, sans-serif; font-weight: 700; font-size: 10px; text-align: center; text-decoration: none; -webkit-text-size-adjust: none; vertical-align: middle; line-height: 11px;">READ MORE</span></a>
 																	</td>
 																</tr>
 															</table>
 														</td>
 													</tr>
 												</table><!--[if gte mso 16]><span style="font-size:0px;line-height:0px;"><br>&nbsp;</span><![endif]-->
-												<!-- Tile Module End :: module_tile_text.html -->
+												<!-- Text Tile Module End :: module_tile_text.html -->
 											</td>
 										</tr>
 									</table>
@@ -372,13 +423,12 @@ a,h1,h2,h3,h4,p,table,td,th,span,li,ul,ol{
 						</table>
 						<!--[if (gte mso 9)|(IE)]></td></tr></tbody></table><![endif]-->
 					</td>
-				</tr><!-- Module End :: Img Tile -->
+				</tr>
 				<!-- Module 2 End  : module_tiles.html -->
 				<tr>
 					<td class="divider white-bg" width="100%" style="margin: 0; background-color: white; font-size: 4px; line-height: 4px; mso-line-height-rule: exactly;">&nbsp;</td>
 				</tr>
-				<tr>
-					<!-- Footer Start -->
+				<tr><!-- Footer Start -->
 					<td bgcolor="#a30b35" width="100%" align="center" style="margin: 0;">
 						<!--[if (gte mso 9)|(IE)]><table width="500" border="0" cellpadding="0" cellspacing="0" style="border-spacing:0;table-layout:fixed;width:500px;"><tbody><tr><td width="500" style="padding:0;width:500px;"><![endif]-->
 						<table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
@@ -391,7 +441,7 @@ a,h1,h2,h3,h4,p,table,td,th,span,li,ul,ol{
 										<tr>
 											<td class="footer-logo-pad mobile-pad-bottom" style="margin: 0; padding: 0px 10px;">
 												<a href="https://eltamd.com/" target="_blank" style="text-decoration: none;">
-													<img src="images/footer_logo_2x.png" alt="elta MD&#174; SKINCARE" class="footer-logo" width="29" height="23" style="-ms-interpolation-mode: bicubic; outline: none; border-style: none; border: 0; display: block; margin: 0; padding: 0; text-decoration: none; font-family: niveau-grotesk, Century Gothic, CenturyGothic, AppleGothic, Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: 300; font-size: 1px; line-height: 1px; width: 29px; height: 23px;">
+													<img src="https://eoa-editor.s3.amazonaws.com/6cf5508da12f8ae6e814e160748b745545a70625%2FEltaMD%2Ffooter_logo_2x.png" alt="elta MD&#174; SKINCARE" class="footer-logo" width="29" height="23" style="-ms-interpolation-mode: bicubic; outline: none; border-style: none; border: 0; display: block; margin: 0; padding: 0; text-decoration: none; font-family: niveau-grotesk, Century Gothic, CenturyGothic, AppleGothic, Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: 300; font-size: 1px; line-height: 1px; width: 29px; height: 23px;">
 												</a>
 											</td>
 										</tr>
@@ -436,27 +486,27 @@ a,h1,h2,h3,h4,p,table,td,th,span,li,ul,ol{
 										<tr>
 											<td class="social-icon-pad" style="margin: 0; padding: 5px 10px 10px;">
 												<a href="https://www.facebook.com/EltaMD/" target="_blank" style="text-decoration: none;">
-													<img src="images/social_facebook_2x.png" alt="facebook" class="social-icon" width="22" height="20" style="-ms-interpolation-mode: bicubic; outline: none; border-style: none; border: 0; display: block; margin: 0; padding: 0; text-decoration: none; font-family: niveau-grotesk, Century Gothic, CenturyGothic, AppleGothic, Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: 300; font-size: 1px; line-height: 1px; width: 22px; height: 20px;">
+													<img src="https://eoa-editor.s3.amazonaws.com/6cf5508da12f8ae6e814e160748b745545a70625%2FEltaMD%2Fsocial_facebook_2x.png" alt="facebook" class="social-icon" width="22" height="20" style="-ms-interpolation-mode: bicubic; outline: none; border-style: none; border: 0; display: block; margin: 0; padding: 0; text-decoration: none; font-family: niveau-grotesk, Century Gothic, CenturyGothic, AppleGothic, Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: 300; font-size: 1px; line-height: 1px; width: 22px; height: 20px;">
 												</a>
 											</td>
 											<td class="social-icon-pad" style="margin: 0; padding: 5px 10px 10px;">
 												<a href="https://twitter.com/eltamd" target="_blank" style="text-decoration: none;">
-													<img src="images/social_twitter_2x.png" alt="twitter" class="social-icon" width="22" height="20" style="-ms-interpolation-mode: bicubic; outline: none; border-style: none; border: 0; display: block; margin: 0; padding: 0; text-decoration: none; font-family: niveau-grotesk, Century Gothic, CenturyGothic, AppleGothic, Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: 300; font-size: 1px; line-height: 1px; width: 22px; height: 20px;">
+													<img src="https://eoa-editor.s3.amazonaws.com/6cf5508da12f8ae6e814e160748b745545a70625%2FEltaMD%2Fsocial_twitter_2x.png" alt="twitter" class="social-icon" width="22" height="20" style="-ms-interpolation-mode: bicubic; outline: none; border-style: none; border: 0; display: block; margin: 0; padding: 0; text-decoration: none; font-family: niveau-grotesk, Century Gothic, CenturyGothic, AppleGothic, Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: 300; font-size: 1px; line-height: 1px; width: 22px; height: 20px;">
 												</a>
 											</td>
 											<td class="social-icon-pad" style="margin: 0; padding: 5px 10px 10px;">
 												<a href="https://www.instagram.com/eltamdskincare/" target="_blank" style="text-decoration: none;">
-													<img src="images/social_instagram_2x.png" alt="instagram" class="social-icon" width="22" height="20" style="-ms-interpolation-mode: bicubic; outline: none; border-style: none; border: 0; display: block; margin: 0; padding: 0; text-decoration: none; font-family: niveau-grotesk, Century Gothic, CenturyGothic, AppleGothic, Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: 300; font-size: 1px; line-height: 1px; width: 22px; height: 20px;">
+													<img src="https://eoa-editor.s3.amazonaws.com/6cf5508da12f8ae6e814e160748b745545a70625%2FEltaMD%2Fsocial_instagram_2x.png" alt="instagram" class="social-icon" width="22" height="20" style="-ms-interpolation-mode: bicubic; outline: none; border-style: none; border: 0; display: block; margin: 0; padding: 0; text-decoration: none; font-family: niveau-grotesk, Century Gothic, CenturyGothic, AppleGothic, Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: 300; font-size: 1px; line-height: 1px; width: 22px; height: 20px;">
 												</a>
 											</td>
 											<td class="social-icon-pad" style="margin: 0; padding: 5px 10px 10px;">
 												<a href="https://www.youtube.com/channel/UCf6qCuuob_12xlwcjj6ALJA" target="_blank" style="text-decoration: none;">
-													<img src="images/social_youtube_2x.png" alt="youtube" class="social-icon" width="22" height="20" style="-ms-interpolation-mode: bicubic; outline: none; border-style: none; border: 0; display: block; margin: 0; padding: 0; text-decoration: none; font-family: niveau-grotesk, Century Gothic, CenturyGothic, AppleGothic, Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: 300; font-size: 1px; line-height: 1px; width: 22px; height: 20px;">
+													<img src="https://eoa-editor.s3.amazonaws.com/6cf5508da12f8ae6e814e160748b745545a70625%2FEltaMD%2Fsocial_youtube_2x.png" alt="youtube" class="social-icon" width="22" height="20" style="-ms-interpolation-mode: bicubic; outline: none; border-style: none; border: 0; display: block; margin: 0; padding: 0; text-decoration: none; font-family: niveau-grotesk, Century Gothic, CenturyGothic, AppleGothic, Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: 300; font-size: 1px; line-height: 1px; width: 22px; height: 20px;">
 												</a>
 											</td>
 											<td class="social-icon-pad" style="margin: 0; padding: 5px 10px 10px;">
 												<a href="https://br.pinterest.com/eltamdskincare/" target="_blank" style="text-decoration: none;">
-													<img src="images/social_pinterest_2x.png" alt="pinterest" class="social-icon" width="22" height="20" style="-ms-interpolation-mode: bicubic; outline: none; border-style: none; border: 0; display: block; margin: 0; padding: 0; text-decoration: none; font-family: niveau-grotesk, Century Gothic, CenturyGothic, AppleGothic, Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: 300; font-size: 1px; line-height: 1px; width: 22px; height: 20px;">
+													<img src="https://eoa-editor.s3.amazonaws.com/6cf5508da12f8ae6e814e160748b745545a70625%2FEltaMD%2Fsocial_pinterest_2x.png" alt="pinterest" class="social-icon" width="22" height="20" style="-ms-interpolation-mode: bicubic; outline: none; border-style: none; border: 0; display: block; margin: 0; padding: 0; text-decoration: none; font-family: niveau-grotesk, Century Gothic, CenturyGothic, AppleGothic, Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: 300; font-size: 1px; line-height: 1px; width: 22px; height: 20px;">
 												</a>
 											</td>
 										</tr>

@@ -1,19 +1,17 @@
 <tr><!-- Header Start -->
 	<td class="body-container white-bg" width="100%" align="center">
-		<table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">{{!--
-			<!-- <tr>
-					<td class="gap-10">&nbsp;</td>
-			</tr>-->--}}
+		<table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
 			<tr>
 				<td align="center" class="header-padding">
 					<a href="{{{header.url}}}" target="_blank">
-						<img src="{{{serverPath this}}}{{{global.header.logo.src}}}" alt="{{global.header.logo.alt}}" class="header-logo" width="{{global.header.logo.width}}" height="{{global.header.logo.height}}" />
+						<img src="{{{serverPath this}}}{{{global.header.logo.src}}}" alt="{{global.header.logo.alt}}" class="header-logo light-img" width="{{global.header.logo.width}}" height="{{global.header.logo.height}}" border="0"/>
+						{{!<!-- The following Dark Mode logo image is hidden with MSO conditional code and inline CSS, but will be revealed once Dark Mode is triggered -->}}
+						<!--[if !mso]><! --><div class="dark-img-wrapper" align="center">
+          		<img src="{{{serverPath this}}}{{{global.header.logo.src_dark}}}" alt="{{global.header.logo.alt}}" class="header-logo dark-img" width="{{global.header.logo.width}}" height="{{global.header.logo.height}}" style="color: #ffffff;" border="0"/>
+          	</div><!--<![endif]-->
 					</a>
 				</td>
-			</tr>{{!--
-			<!-- <tr>
-					<td class="gap-15">&nbsp;</td>
-			</tr>-->--}}
+			</tr>
 		</table>
 	</td>
 </tr><!-- Header End -->

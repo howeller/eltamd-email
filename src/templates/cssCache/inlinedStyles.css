@@ -95,6 +95,22 @@ td.title{
 .black{ color: #000000 }*/
 .white-bg{ background-color: #ffffff }
 .red-bg{ background-color: #a30b35 }
+.yellow-bg{ background-color: #f6dc3c }
+/*.dark-img, .dark-img-wrapper{
+	/*color: white;
+	display: none;
+}*/
+.dark-img-wrapper{
+	display: none;
+	overflow: hidden;
+	float: left;
+	width: 0px;
+	max-height: 0px;
+	max-width: 0px;
+	line-height: 0px;
+	visibility: hidden;
+	/*mso-hide: all;*/
+}
 /* header-module */
 img.header-logo {
   width: 74px;
@@ -181,13 +197,14 @@ img.tile-img/*, .two-column-img-wrapper*/{
 	-webkit-text-size-adjust: none;
 }
 a.cta-txt{
-	/*vertical-align:middle;*/
+	vertical-align:middle;
 	line-height:22px;
 }
 span.cta-txt{
-	/*vertical-align:middle;*/
-	/*line-height:11px;*/
+	vertical-align:middle;
+	line-height:11px;
 }
+
 /* Footer
 	Outlook doesn't like padding on image, paragraph, div or anchor tags.
 */

@@ -35,14 +35,16 @@ const dir = {
 const inliner = emailBuilder({ encodeSpecialChars: true, juice: {preserveImportant: true, applyWidthAttributes:false} }),
 	srcFolders = util.getFolders(dir.emails);
 
-let	useCdnImgPath = false,  // Use relative paths or CDN paths set inside the config
-	data;
+let	useCdnImgPath = true;  // Use relative paths or CDN paths set inside the config
 
 const serverPath = (scope=this) => (useCdnImgPath && scope.image_path) ? scope.image_path : 'images/';
 
 // const checkHex = (color) => (/(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(color)) ? color : false; //	Validate Hex Number
 
-function buildEmail(){
+function buildEmail(useCdn=false){
+
+	useCdnImgPath = useCdn;
+	// console.log(`useCdnImgPath? `,useCdnImgPath);
 
 	let task = srcFolders.map(function(folder) {
 		let _src = path.join(dir.emails, folder),
@@ -54,8 +56,6 @@ function buildEmail(){
 
 		_data['global'] = _content['global'];
 		_data['name'] = _name; // Store the folder name as a new JSON key/value. Avoids repeating the key name in JSON.
-
-		// data = _data;// assign to global var for txt
 
 		// Configure gulp-compile-handlebars options
 		let hbsOptions = {	
@@ -78,7 +78,7 @@ function buildEmail(){
 			.pipe(inliner.build())
 			.pipe(rename('index.html'))
 			.pipe(gulp.dest(_dist));
-``		
+		
 		return merge( _html);
 	});
 	let lastStream = task[task.length-1];
@@ -134,7 +134,6 @@ function buildTxt(){
 				_template = dir.templates+'main.txt.hbs';
 
 		_data['global'] = _content['global'];
-		// _data['name'] = _name;
 
 		let hbsOptions = {	
 			ignorePartials:false,
@@ -189,7 +188,9 @@ function previewCatConfig(){
 }
 
 // Tasks
-gulp.task('build', buildEmail);
+// gulp.task('build', buildEmail);
+gulp.task('build:test', () => { return buildEmail(true)});// Run build and force to use cdn image path
+gulp.task('build:final', () => { return buildEmail(false)});// Run build and force to use relative image path
 gulp.task('build:txt', buildTxt);
 gulp.task('build:css', compileCss); 
 gulp.task('img', optimizeImages); 
@@ -197,9 +198,9 @@ gulp.task('clean:css', () => { return del(dir.cssToLine+'/*.css') });
 gulp.task('clean:html', () => { return del(dir.dist+'**/*'); });
 gulp.task('clean:zips', () => { return del(dir.zips+'**/*'); });
 gulp.task('clean', () => { return gulp.parallel('clean:zips', 'clean:html')});
-gulp.task('default', gulp.series('build:txt'));
-// gulp.task('default', gulp.series('clean:css','build:css', 'build'));
-gulp.task('all', gulp.series('clean:css','build:css', 'build', 'img', 'build:txt'));
+//gulp.task('default', gulp.series('build:txt'));
+gulp.task('default', gulp.series('clean:css','build:css', 'build:test'));
+gulp.task('all', gulp.series('clean:css','build:css', 'build:final', 'img', 'build:txt'));
 gulp.task('watch', () => { gulp.watch([ dir.emails+'**/**.hbs', dir.templates+'**/**.hbs', './lib/**', dir.content], gulp.series('default')) });
 gulp.task('preview', previewCatConfig);
-gulp.task('zip', gulp.series('clean:css','build:css', 'build', 'img', 'build:txt', zipFiles));
+gulp.task('zip', gulp.series('clean:css','build:css', 'build:final', 'img', 'build:txt', zipFiles));

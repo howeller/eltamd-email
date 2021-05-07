@@ -1,0 +1,51 @@
+:root {
+	color-scheme: light dark;
+	supported-color-schemes: light dark;
+}
+
+.white{ color: #fff !important }
+[data-ogsc] .white{ color: #fff !important }
+
+@media (prefers-color-scheme: dark) {
+	/* Shows Dark Mode-Only Content, Like Images */
+	.dark-img-wrapper, .dark-img {
+		display: block !important;
+		width: auto !important;
+		overflow: visible !important;
+		float: none !important;
+		max-height: inherit !important;
+		max-width: inherit !important;
+		line-height: auto !important;
+		margin-top: 0px !important;
+		visibility: inherit !important;
+	}
+	[data-ogsc] .dark-img-wrapper { 
+		display: block !important;
+		width: auto !important;
+		overflow: visible !important;
+		float: none !important;
+		max-height: inherit !important;
+		max-width: inherit !important;
+		line-height: auto !important;
+		margin-top: 0px !important;
+		visibility: inherit !important;
+	}
+	/* Hides Light Mode-Only Content, Like Images */
+	.light-img {
+		display: none;
+		display: none !important; 
+	}
+	[data-ogsc] .light-img { 
+		display:none; 
+		display:none !important;
+	}
+	
+	.darkmode, .white-bg { background-color: #272623 !important; }
+	.yellow-bg { background-color: #c5aa03 !important; }
+{{!--	 
+	/* Custom Dark Mode Font Colors */
+	td, span, a{ color: #ccc !important; }
+	 
+	/* Custom Dark Mode Text Link Color */
+	.link { color: #91ADD4 !important; }--}}
+}
