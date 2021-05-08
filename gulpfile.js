@@ -14,8 +14,9 @@ const del = require('del'),
 
 // Custom modules & config
 const ef = require('./lib/htmlEmailTextFormatting'),
-			tf = require ('./lib/txtFormatting'),
-			util = require('./lib/fsUtils');
+	eh = require('./lib/htmlEmailHelpers'),
+	tf = require ('./lib/txtFormatting'),
+	util = require('./lib/fsUtils');
 
 // Directory structure
 const dir = {
@@ -41,6 +42,11 @@ const serverPath = (scope=this) => (useCdnImgPath && scope.image_path) ? scope.i
 
 // const checkHex = (color) => (/(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(color)) ? color : false; //	Validate Hex Number
 
+// const pxToPts = num => Math.round(num * 0.75);
+/*const pxToPts = function(num){
+	return Math.round(num * 0.75);
+}*/
+
 function buildEmail(useCdn=false){
 
 	useCdnImgPath = useCdn;
@@ -65,6 +71,7 @@ function buildEmail(useCdn=false){
 				getName : function(arg){ return arg },
 				// getBgColor: function(arg, root){ return (checkHex(arg)) ? arg : root.groupGlobal.baseColor },// check if value is hex and return 
 				serverPath: function(scope){ return serverPath(scope) },
+				pxToPts: 					eh.pxToPts,
 				formatList: 			ef.formatList,
 				formatParagraph: 	ef.formatParagraph,
 				formatLine: 			ef.replaceLastSpace,
