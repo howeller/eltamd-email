@@ -17,21 +17,22 @@
 ---
 ### Gulp Tasks
 
-Task Name    | What it Does
--------------|-----------
-`build`       | Compiles the `main.html` handlebar template & modules into HTML and inlines the CSS.
+Task Name     | What it Does
+--------------|-----------
+`build:test`  | Compiles the `main.html` handlebar template & modules into HTML and inlines the CSS. Uses CDN image paths if available.
+`build:final` | Compiles the `main.html` handlebar template & modules into HTML and inlines the CSS. Uses relative image paths.
 `build:css`   | Compiles all CSS handlebars `templates/css/`.
 `build:txt`   | Compiles the `main.txt` handlebar template into backup TXT file.
 `clean:css`   | Deletes everything inside `src/css/`.
 `clean:html`  | Deletes everything inside `build/emails/`.
 `clean:zips`  | Deletes everything inside `build/zips/`.
 `clean`       | Runs  `clean:html` and `clean:zips` tasks.
-`img`         | Compresses all pngs and copies all images files into `build`.
-`default`     | Runs `clean:css`, `build:css`, and then `build` tasks in a series.
-`all`         | Runs `clean:css`,`build:css`, `build`, `img` tasks.
+`img`         | Compresses all pngs and copies all local images files into `build`.
+`default`     | Runs `clean:css`, `build:css`, and then `build:test` tasks in a series.
+`all`         | Runs `clean:css`,`build:css`, `build:final`, `img` tasks.
 `preview`     | creates contentData.js for preview site.
 `watch`       | Automatically runs the `default` task when changes to source files.
-`zip`         | Runs the default task and then creates zip file for each email.
+`zip`         | Runs the `all` tasks and then creates zip file for each email.
 
 ### Project Tree
 ```
