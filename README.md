@@ -1,6 +1,6 @@
 <img src="preview/assets/images/header_logo_2x.png" alt="" width="70"/> **EltaMD Emails**
 
-[JIRA >>](https://hogarthdigital.atlassian.net/browse/CTUS-230) | 
+[JIRA >>](https://hogarthdigital.atlassian.net/browse/CTUS-320) | 
 [Preview Site >>](https://www.campaign.hogarthww.digital/ctus-colgate/colgate-h207077/preview/categories/eng/index.html)
 
 ---
